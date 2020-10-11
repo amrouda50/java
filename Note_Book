@@ -1,0 +1,35 @@
+package library;
+
+class Book{
+private String title;
+private String author;
+private int publishedyear;
+private static boolean can_be_borrowed;
+public Book(String title , String author , int publishedyear , boolean can_be_borrowed){
+this.title = title;
+this.author = author;
+this.publishedyear = publishedyear;
+this.can_be_borrowed = can_be_borrowed;
+}
+Book(){
+throw new IllegalArgumentException("Null parametes");
+}
+public static String toString(Book x){
+return (x.title + " " + x.author + " " + x.publishedyear + " " + can_be_borrowed);
+
+}
+public boolean sameAs(Book x){
+return (x != null) && (title.equals(x.title)) && (author.equals(x.author)) && (publishedyear == x.publishedyear);
+}
+}
+
+public class lab3hw{
+public static void main(String [] args){
+Book first = new Book("Harry Potter" , "J.K Rolling" , 1997 , true);
+Book second = new Book("allan" , "yoga" , 1923 , false);
+System.out.println(Book.toString(first));
+System.out.println(second.sameAs(first));
+System.out.println(second.sameAs(second));
+
+}
+}
