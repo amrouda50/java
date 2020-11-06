@@ -1,0 +1,26 @@
+class Solution {
+    public int solution(int N) {
+       int []binaryNum = new int[32]; 
+       
+
+  char[] num = (Integer.toBinaryString(N)).toCharArray();
+    int max = 0;
+    int x = 0;
+    for(char a : num){
+        if(a !='1'){
+           
+         x++;
+        }
+        else{
+             
+            if(x > max){
+                
+                max = x;  
+            }
+            x = 0;
+        }
+    }
+    return max;
+    }
+  
+    }
